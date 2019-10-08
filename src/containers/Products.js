@@ -7,12 +7,12 @@ import { CardColumns } from 'react-bootstrap';
 class Products extends Component {
 
     render() {
-      const products = this.props.products.map((product) => <ProductCard id={product.id} name={product.name} 
+      const products = this.props.products.map((product, i) => <ProductCard key={i} id={product.id} name={product.name} 
         price={product.price} description={product.description} sold={product.sold} imglink={product.imglink} />)
 
       return (
         <div>
-          <br />
+          <br />  
           <div className="row justify-content-center">
             <h2>Products</h2>
           </div>

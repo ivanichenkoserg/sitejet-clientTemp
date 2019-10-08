@@ -17,7 +17,6 @@ class ProductCard extends Component {
 
     handleDelete = e => {
       this.props.deleteProduct(this.props.id) 
-      this.render()
     }
 
     render() {

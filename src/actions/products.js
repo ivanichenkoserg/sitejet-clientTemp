@@ -44,13 +44,12 @@ export const deleteProduct = (product_id) => {
         debugger; 
         return fetch(`./products/${product_id}`, {
             method: 'DELETE',
-            body: JSON.stringify(product_id),
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             }
         })
-        .then(resp => resp.json())
-        // .then(product => dispatch({type: 'PRODUCT_DELETED', payload: product}))
+        .then(resp => console.log(resp.json()))
+        .then(product => dispatch({type: 'PRODUCT_DELETED', payload: product}))
     }
 }
