@@ -1,26 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import { connect } from 'react-redux'
+import { getProducts } from './actions/products'
+import ProductForm from './containers/ProductForm'
+import Products from './containers/Products'
+import { getServices } from './actions/services'
+import ServiceForm from './containers/ServiceForm'
+import Services from './containers/Services'
+import NavBar from './components/NavBar'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Footer from './components/Footer'
+import About from './components/About'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+
+  componentDidMount(){
+    this.props.getProducts()
+    this.props.getServices()
+  } 
+
+  render(){ 
+
+    return (
+      <div className="App" >        
+      <Router>
+        <React.Fragment>
+          <NavBar />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/products" component={Products} />
+          <Route exact path="/services" component={Services} />
+          <Route exact path="/product/new" component={ProductForm} />
+          <Route exact path="/service/new" component={ServiceForm} />
+        </React.Fragment>
+      </Router>
+      <Footer />
+      </div>
+    );
+  }  
+
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    products: state.productReducer.products,
+    services: state.productReducer.services,
+    loading: state.productReducer.loading
+  }
+} 
+
+export default connect(mapStateToProps, { getProducts, getServices } )(App);
