@@ -12,7 +12,7 @@ class NavBar extends Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="top-nav-bar">
-                <Nav.Link href="/about">About</Nav.Link>
+                <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/products">Products</Nav.Link>
                 <Nav.Link href="/services">Services</Nav.Link>
                 <NavDropdown title="Create New" id="basic-nav-dropdown">

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import image from './FireTransparentBackground.png';
 
-class About extends Component {
+class Home extends Component {
 
     render() {
       return (
-        <main role="main" class="container" align="left">
+        <main role="main" class="container" align="center">
           <br />
-        <h2>About</h2>
+        <h2>Welcome</h2>
           <br />
             FireSale is an application designed to help you manage the inventory of any goods or services that you sell.
           <div align="center">
@@ -22,5 +22,5 @@ class About extends Component {
   
   }
   
-  export default About;
+  export default Home;
 

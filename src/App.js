@@ -10,7 +10,7 @@ import Services from './containers/Services'
 import NavBar from './components/NavBar'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Footer from './components/Footer'
-import About from './components/About'
+import Home from './components/Home'
 
 
 class App extends Component {
@@ -23,11 +23,11 @@ class App extends Component {
   render(){ 
 
     return (
-      <div className="App" >        
+      <div className="App" >       
       <Router>
         <React.Fragment>
           <NavBar />
-          <Route exact path="/about" component={About} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/products" component={Products} />
           <Route exact path="/services" component={Services} />
           <Route exact path="/product/new" component={ProductForm} />
