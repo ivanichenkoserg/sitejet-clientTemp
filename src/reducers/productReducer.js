@@ -34,9 +34,7 @@ export default ( state = {products: [], loading: false}, action ) => {
 
         case 'PRODUCT_DELETED':
         console.log('Deleted product')
-        debugger; 
-        return {...state, loading: false, 
-            products: state.products.filter(product => product.id !== action.payload.id)
+        return {...state, loading: false
         }
 
         default: 

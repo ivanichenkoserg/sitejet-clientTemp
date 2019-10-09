@@ -13,10 +13,9 @@ export default ( state = {services: [], loading: false}, action ) => {
             }
         
         case 'ADD_SERVICE': 
-            console.log("Got to add a product")
+            console.log("Got to add a service")
             return {
-                ...state,
-                services: [...state.services], 
+                ...state, 
                 loading: true 
             }
         
@@ -26,6 +25,18 @@ export default ( state = {services: [], loading: false}, action ) => {
                 services: action.payload,
                 loading:false
             }
+        
+        case 'DELETE_SERVICE': 
+            return {
+                ...state, 
+                loading: true 
+            }
+
+        case 'SERVICE_DELETED':
+        console.log('Deleted service')
+
+        return {...state, loading: false
+        }
 
         default: 
             return state; 

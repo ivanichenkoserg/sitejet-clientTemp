@@ -3,12 +3,15 @@ import { Button, Card } from 'react-bootstrap';
 import { connect } from 'react-redux'
 import { deleteProduct } from '../actions/products'
 
-
 class ProductCard extends Component {
+
+    state = {
+      bgColor: 'primary'
+    }
 
     info = () => {
       if (this.props.sold === true) {
-        return <Button variant="danger">Sold</Button>
+        return <Button variant="success">Sold</Button>
       } 
       else { 
         return <Button variant="primary">Available</Button>
@@ -16,7 +19,10 @@ class ProductCard extends Component {
     }; 
 
     handleDelete = e => {
-      this.props.deleteProduct(this.props.id) 
+      this.props.deleteProduct(this.props.id)
+      this.setState({
+        bgColor: 'danger'
+      })  
     }
 
     render() {
@@ -31,7 +37,7 @@ class ProductCard extends Component {
               <Card.Text>
                 {this.props.description}
               </Card.Text>
-              {this.info()} <Button variant="primary" onClick={this.handleDelete} >Delete</Button> 
+              {this.info()} <Button variant={this.state.bgColor}  onClick={this.handleDelete} >Delete</Button> 
             </Card.Body>
           </Card>
         </div>

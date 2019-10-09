@@ -28,7 +28,6 @@ class ServiceForm extends Component {
     handleOnSubmit = e => {
         e.preventDefault()
         const service = {...this.state}
-        debugger; 
         this.props.addService(service)
         this.setState({
             name: '',
@@ -54,7 +53,7 @@ class ServiceForm extends Component {
                 <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
                         <Form.Label>Services</Form.Label>
-                        <FormControl type="name" value={this.state.name} name="name" onChange={this.handleOnChange} placeholder="Enter product name" />
+                        <FormControl type="name" value={this.state.name} name="name" onChange={this.handleOnChange} placeholder="Enter service name" />
                     </Form.Group>
                 
                     <Form.Group as={Col} controlId="formGridPrice">

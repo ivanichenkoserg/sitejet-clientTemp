@@ -5,8 +5,8 @@ export const getProducts = () => {
         .then(resp => resp.json())
         .then(products => dispatch({type: "FETCH_PRODUCTS", payload: products}))
     }
-} 
-
+}  
+  
 export const addProduct = (product) => {
     return (dispatch) => {
         dispatch({type: "ADD_PRODUCT"}, product)
@@ -14,7 +14,8 @@ export const addProduct = (product) => {
             method: 'POST',
             body: JSON.stringify(product),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             }
         })
         .then(resp => resp.json())
@@ -22,34 +23,22 @@ export const addProduct = (product) => {
     }
 }
 
-// export const deleteProduct = (product_id) =>{
-//     console.log('deleting goal')
-//     let data = {
-//       method: 'DELETE',
-//       body: JSON.stringify(product),
-//       headers: {
-//         'Accept': 'application/json',
-//         'Content-Type': 'application/json'
-//       }
-//     }
-//       fetch(`./products/${product_id}`, data)
-//         .then(response => response.json())
-//         .then(product => console.log(product))
-//         // .then(product => dispatch({ type: 'PRODUCT_DELETED', payload: product}))
-//     }
-
-export const deleteProduct = (product_id) => {
-    return (dispatch) => {
-        dispatch({type: "DELETE_PRODUCT"}, product_id)
-        debugger; 
-        return fetch(`./products/${product_id}`, {
-            method: 'DELETE',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(resp => console.log(resp.json()))
-        .then(product => dispatch({type: 'PRODUCT_DELETED', payload: product}))
+export const deleteProduct = (product_id) =>{
+console.log('deleting goal')
+let data = {
+    method: 'DELETE',
+    headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+    }
+}
+return dispatch => {
+    fetch(`/products/${product_id}`, data)
+        .then(response => response.json())
+        .then(product => dispatch({
+        type: 'PRODUCT_DELETED',
+        payload: product
+        }))
+        .catch(err => err)
     }
 }

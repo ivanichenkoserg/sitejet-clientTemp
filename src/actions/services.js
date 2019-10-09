@@ -22,3 +22,23 @@ export const addService = (service) => {
         .then(service => dispatch({type: 'SERVICE_ADDED', payload: service}))
     }
 }
+
+export const deleteService = (service_id) =>{
+    console.log('deleting goal')
+    let data = {
+        method: 'DELETE',
+        headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+        }
+    }
+    return dispatch => {
+        fetch(`/services/${service_id}`, data)
+            .then(response => response.json())
+            .then(service => dispatch({
+            type: 'SERVICE_DELETED',
+            payload: service
+            }))
+            .catch(err => err)
+        }
+    }
