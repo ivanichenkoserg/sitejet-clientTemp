@@ -34,13 +34,13 @@ Open the file by running each of the commands below in a new terminal:
 
 Then install the relevant dependencies with:  
 
-`npm install` (for JS)
-`bundle install` (for Ruby on Rails)
+* `npm install` (for JS)
+* `bundle install` (for Ruby on Rails)
 
 Finally run both by using: 
 
-`npm start` (for JS)
-`rails s` (for Ruby on Rails)
+* `npm start` (for JS)
+* `rails s` (for Ruby on Rails)
 
 ## License
 
