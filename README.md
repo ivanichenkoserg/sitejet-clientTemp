@@ -1,68 +1,47 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# FireSale - Client
 
-## Available Scripts
+This is a website that allows sole business owners to log their inventory of products and services which they wish to sell. 
 
-In the project directory, you can run:
+## Screenshots
 
-### `npm start`
+![Screenshot 1](https://drive.google.com/file/d/1TTyabuOlM9LHg-FPNPUaMamGj5SNn_0Y/view?usp=sharing)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technology used
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Built with: 
+* Ruby on Rails API Back-end
+* Javascript React / Redux Front-end
+* React-Bootstrap (for styling) 
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Allows for product / service name, description, price and image in listings
+* Users can mark products as sold and delete them       
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To install this repository simply clone both the client repo (this one) and the rails backend repo by running: 
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```
+git clone https://github.com/Kish-Siva-1/firesale-client.git
+git clone https://github.com/Kish-Siva-1/firesale-api.git
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Open the file by running each of the commands below in a new terminal: 
 
-### `npm run eject`
+1. `cd firesale-client/`
+2. `cd firesale-api/`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Then install the relevant dependencies with:  
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`npm install` (for JS)
+`bundle install` (for Ruby on Rails)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Finally run both by using: 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`npm start` (for JS)
+`rails s` (for Ruby on Rails)
 
-## Learn More
+## License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+MIT © Kish-Siva-1 
