@@ -26,15 +26,18 @@ class ServiceCard extends Component {
     }
 
     render() {
+
+      const {id, imglink, name, price, description} = this.props
+
       return ( 
-        <div key={this.props.id} > 
+        <div key={id} > 
           <Card>
-            <Card.Img variant="top" src={this.props.imglink} />
+            <Card.Img variant="top" src={imglink} />
             <Card.Body>
-              <Card.Title>{this.props.name}</Card.Title>
-              <Card.Subtitle >${this.props.price}</Card.Subtitle>
+              <Card.Title>{name}</Card.Title>
+              <Card.Subtitle >${price}</Card.Subtitle>
               <Card.Text>
-                {this.props.description}
+                {description}
               </Card.Text>
               {this.info()} <Button variant={this.state.bgColor} onClick={this.handleDelete} >Delete</Button> 
             </Card.Body>

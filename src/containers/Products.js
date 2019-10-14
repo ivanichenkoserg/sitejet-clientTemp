@@ -7,8 +7,8 @@ import { CardColumns } from 'react-bootstrap';
 class Products extends Component {
 
     render() {
-      const products = this.props.products.map((product, i) => <ProductCard key={i} id={product.id} name={product.name} 
-        price={product.price} description={product.description} sold={product.sold} imglink={product.imglink} />)
+
+      const products = this.props.products.map((product, i) => <ProductCard key={i} {...product} />)
 
       return (
         <div>

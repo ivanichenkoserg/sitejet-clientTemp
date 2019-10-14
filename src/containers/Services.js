@@ -7,8 +7,8 @@ import { CardColumns } from 'react-bootstrap';
 class Services extends Component {
 
     render() {
-    const services = this.props.services.map((service, i) => <ServiceCard key={i} id={service.id} name={service.name} 
-        price={service.price} description={service.description} sold={service.sold} imglink={service.imglink} />)
+
+      const services = this.props.services.map((service, i) => <ServiceCard key={i} {...service} />)
 
       return (
         <div>
