@@ -41,12 +41,4 @@ class App extends Component {
 
 }
 
-const mapStateToProps = (state) => {
-  return {
-    products: state.productReducer.products,
-    services: state.productReducer.services,
-    loading: state.productReducer.loading
-  }
-} 
-
-export default connect(mapStateToProps, { getProducts, getServices } )(App);
+export default connect(null, { getProducts, getServices } )(App);

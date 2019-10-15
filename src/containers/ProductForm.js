@@ -62,12 +62,12 @@ class ProductForm extends Component {
                     </Form.Group>
                 </Form.Row>
 
-                <Form.Group controlId="exampleForm.ControlTextarea2">
+                <Form.Group controlId="ControlTextarea2">
                     <Form.Label>Image Link</Form.Label>
                     <FormControl rows="1" value={this.state.imglink} name="imglink" onChange={this.handleOnChange} placeholder="Enter link to image of the product" />
                 </Form.Group>
 
-                <Form.Group controlId="exampleForm.ControlTextarea1">
+                <Form.Group controlId="ControlTextarea1">
                     <Form.Label>Description</Form.Label>
                     <FormControl as="textarea" rows="2" value={this.state.description} name="description" onChange={this.handleOnChange} placeholder="Enter description" />
                 </Form.Group>

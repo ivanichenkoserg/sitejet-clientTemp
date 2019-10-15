@@ -25,17 +25,6 @@ export default ( state = {products: [], loading: false}, action ) => {
                 products:[...state.products, action.payload],
                 loading:false
             }
-        
-        case 'DELETE_PRODUCT': 
-            return {
-                ...state, 
-                loading: true 
-            }
-
-        case 'PRODUCT_DELETED':
-        console.log('Deleted product')
-        return {...state, loading: false
-        }
 
         default: 
             return state; 

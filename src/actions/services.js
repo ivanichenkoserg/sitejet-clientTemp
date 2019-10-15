@@ -32,13 +32,7 @@ export const deleteService = (service_id) =>{
         'Content-Type': 'application/json'
         }
     }
-    return dispatch => {
+    return () => {
         fetch(`/services/${service_id}`, data)
-            .then(response => response.json())
-            .then(service => dispatch({
-            type: 'SERVICE_DELETED',
-            payload: service
-            }))
-            .catch(err => err)
         }
     }

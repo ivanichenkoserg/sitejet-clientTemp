@@ -18,7 +18,7 @@ class ServiceCard extends Component {
       }
     }; 
 
-    handleDelete = e => {
+    handleDelete = () => {
       this.props.deleteService(this.props.id)
       this.setState({
         bgColor: 'danger'

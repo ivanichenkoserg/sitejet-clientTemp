@@ -18,7 +18,7 @@ class ProductCard extends Component {
       }
     }; 
 
-    handleDelete = e => {
+    handleDelete = () => {
       this.props.deleteProduct(this.props.id)
       this.setState({
         bgColor: 'danger'
@@ -39,7 +39,7 @@ class ProductCard extends Component {
               <Card.Text>
                 {description}
               </Card.Text>
-              {this.info()} <Button variant={this.state.bgColor}  onClick={this.handleDelete} >Delete</Button> 
+              {this.info()} <Button variant={this.state.bgColor} onClick={this.handleDelete} >Delete</Button> 
             </Card.Body>
           </Card>
         </div>

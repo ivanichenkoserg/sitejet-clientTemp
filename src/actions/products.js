@@ -32,13 +32,7 @@ let data = {
     'Content-Type': 'application/json'
     }
 }
-return dispatch => {
+return () => {
     fetch(`/products/${product_id}`, data)
-        .then(response => response.json())
-        .then(product => dispatch({
-        type: 'PRODUCT_DELETED',
-        payload: product
-        }))
-        .catch(err => err)
     }
 }
