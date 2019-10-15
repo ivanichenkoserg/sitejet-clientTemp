@@ -3,7 +3,9 @@ export const getProducts = () => {
         dispatch({type: 'LOADING_PRODUCTS'})
         return fetch('../products')
         .then(resp => resp.json())
-        .then(products => dispatch({type: "FETCH_PRODUCTS", payload: products}))
+        .then(products => {
+            dispatch({type: "FETCH_PRODUCTS", payload: products})
+        })
     }
 }  
   

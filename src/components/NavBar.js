@@ -9,6 +9,8 @@ class NavBar extends Component {
 
         <Navbar bg="dark" variant="dark" expand="lg">
         <Navbar.Brand >FireSale</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="top-nav-bar">
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/products">Products</Nav.Link>
@@ -18,6 +20,7 @@ class NavBar extends Component {
                     <NavDropdown.Item href="/service/new">Service</NavDropdown.Item>
                 </NavDropdown>
             </Nav>
+        </Navbar.Collapse>
         </Navbar>
 
         </div>
