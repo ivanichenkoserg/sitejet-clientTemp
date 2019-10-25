@@ -3,7 +3,7 @@ const API_URL = 'https://firesale-api.herokuapp.com'
 export const getServices = () => {
     return (dispatch) => {
         dispatch({type: 'LOADING_SERVICES'})
-        return fetch('../services')
+        return fetch(API_URL + '/services')
         .then(resp => resp.json())
         .then(services => dispatch({type: "FETCH_SERVICES", payload: services}))
     }
@@ -12,7 +12,7 @@ export const getServices = () => {
 export const addService = (service) => {
     return (dispatch) => {
         dispatch({type: 'ADD_SERVICE'})
-        fetch('../services', {
+        fetch(API_URL + '/services', {
             method: 'POST',
             body: JSON.stringify(service),
             headers: {
@@ -35,6 +35,6 @@ export const deleteService = (service_id) =>{
         }
     }
     return () => {
-        fetch(`../services/${service_id}`, data)
+        fetch(API_URL + `/services/${service_id}`, data)
         }
     }
