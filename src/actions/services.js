@@ -3,7 +3,7 @@ const API_URL = 'https://firesale-api.herokuapp.com'
 export const getServices = () => {
     return (dispatch) => {
         dispatch({type: 'LOADING_SERVICES'})
-        return fetch(API_URL + '../services')
+        return fetch(API_URL + '/services')
         .then(resp => resp.json())
         .then(services => dispatch({type: "FETCH_SERVICES", payload: services}))
     }
