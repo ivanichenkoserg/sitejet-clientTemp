@@ -3,7 +3,7 @@ const API_URL = 'https://firesale-api.herokuapp.com'
 export const getProducts = () => {
     return (dispatch) => {
         dispatch({type: 'LOADING_PRODUCTS'})
-        return fetch(API_URL + '/products')
+        return fetch('../products')
         .then(resp => resp.json())
         .then(products => {
             dispatch({type: "FETCH_PRODUCTS", payload: products})
@@ -14,7 +14,7 @@ export const getProducts = () => {
 export const addProduct = (product) => {
     return (dispatch) => {
         dispatch({type: "ADD_PRODUCT"}, product)
-        return fetch(API_URL + '/products', {
+        return fetch('../products', {
             method: 'POST',
             body: JSON.stringify(product),
             headers: {
@@ -37,6 +37,6 @@ let data = {
     }
 }
 return () => {
-    fetch(API_URL + `/products/${product_id}`, data)
+    fetch(`../products/${product_id}`, data)
     }
 }
