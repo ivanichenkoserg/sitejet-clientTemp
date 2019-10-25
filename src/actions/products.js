@@ -1,5 +1,3 @@
-
-
 export const getProducts = () => {
     return (dispatch) => {
         dispatch({type: 'LOADING_PRODUCTS'})
