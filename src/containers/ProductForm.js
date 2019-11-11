@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addProduct } from '../actions/products'
+import { addProduct } from '../actions/lists'
 import { Form, Button, Col, FormControl } from 'react-bootstrap';
 
 class ProductForm extends Component {

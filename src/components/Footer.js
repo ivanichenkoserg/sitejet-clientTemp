@@ -8,7 +8,7 @@ class Footer extends Component {
     <footer className="footer">    
     <hr />
     <main role="main" className="container">
-        <p align="center">&copy; 2018-2019 FireSale, Inc.</p>
+        <p align="center">&copy; 2018-2019 Language Tester, Inc.</p>
     </main>
     </footer>
 

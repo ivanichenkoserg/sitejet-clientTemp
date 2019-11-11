@@ -14,7 +14,7 @@ export const getProducts = () => {
 export const addProduct = (product) => {
     return (dispatch) => {
         dispatch({type: "ADD_PRODUCT"}, product)
-        return fetch(API_URL + '/products', {
+        return fetch(API_URL + '/lists', {
             method: 'POST',
             body: JSON.stringify(product),
             headers: {

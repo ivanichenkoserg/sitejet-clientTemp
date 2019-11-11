@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { connect } from 'react-redux'
-import { deleteProduct } from '../actions/products'
+import { deleteProduct } from '../actions/lists'
 
 class ProductCard extends Component {
 

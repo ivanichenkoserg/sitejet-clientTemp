@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
-import { getProducts } from './actions/products'
+import { getProducts } from './actions/lists'
 import ProductForm from './containers/ProductForm'
 import Products from './containers/Products'
 import { getServices } from './actions/services'
@@ -30,8 +30,6 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/products" component={Products} />
           <Route exact path="/services" component={Services} />
-          <Route exact path="/product/new" component={ProductForm} />
-          <Route exact path="/service/new" component={ServiceForm} />
         </React.Fragment>
       </Router>
       <Footer />
