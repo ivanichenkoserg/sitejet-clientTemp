@@ -1,4 +1,4 @@
-const API_URL = 'https://firesale-api.herokuapp.com'
+const API_URL = 'https://sitejet-api.herokuapp.com/'
 
 export const getProducts = () => {
     return (dispatch) => {
@@ -11,19 +11,19 @@ export const getProducts = () => {
     }
 }  
   
-export const addProduct = (product) => {
+export const addList = (list) => {
     return (dispatch) => {
-        dispatch({type: "ADD_PRODUCT"}, product)
+        dispatch({type: "ADD_LIST"}, list)
         return fetch(API_URL + '/lists', {
             method: 'POST',
-            body: JSON.stringify(product),
+            body: JSON.stringify(list),
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             }
         })
         .then(resp => resp.json())
-        .then(product => dispatch({type: 'PRODUCT_ADDED', payload: product}))
+        .then(list => dispatch({type: 'LIST_ADDED', payload: list}))
     }
 }
 
