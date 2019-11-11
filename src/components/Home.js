@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import image from './FireTransparentBackground.png';
 
 class Home extends Component {
 
@@ -7,9 +6,9 @@ class Home extends Component {
       return (
         <main role="main" class="container" align="center">
           <br />
-        <h2>Welcome</h2>
+        <h2>Language Tester</h2>
           <br />
-            FireSale is an application designed to help you manage the inventory of any goods or services that you sell.
+            Welcome to language tester. Please enter a word in your native language and a foreign language.
           <div align="center">
           <br />
           <br />
