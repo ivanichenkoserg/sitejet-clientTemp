@@ -30,8 +30,6 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/products" component={Products} />
           <Route exact path="/services" component={Services} />
-          <Route exact path="/product/new" component={ProductForm} />
-          <Route exact path="/service/new" component={ServiceForm} />
         </React.Fragment>
       </Router>
       <Footer />
