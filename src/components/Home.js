@@ -1,4 +1,5 @@
 import Lists from '../containers/Lists';
+import Test from '../containers/Tests';
 import Services from '../containers/Services';
 import React, { Component } from 'react';
 import { Form, Button, Col, FormControl, Container } from 'react-bootstrap';
@@ -65,7 +66,7 @@ class Home extends Component {
           <br />
           <div align="left">
           <br />
-            <h2>List <Button variant="success" size='lg' >Test Mode</Button> </h2> 
+            <h2>List <Button variant="success" size='lg' onclick={<Test />} >Test Mode</Button> </h2> 
             <br />
             <div align="center">
               <Container>

@@ -1,4 +1,5 @@
-import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Nav, Navbar} from 'react-bootstrap';
+import Test from '../containers/Tests';
 import React, { Component } from 'react';
 
 class NavBar extends Component {
@@ -13,7 +14,7 @@ class NavBar extends Component {
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="top-nav-bar">
                 <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/products">Test</Nav.Link>
+                <Nav.Link href="/tests">Test</Nav.Link>
             </Nav>
         </Navbar.Collapse>
         </Navbar>

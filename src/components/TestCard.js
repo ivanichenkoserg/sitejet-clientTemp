@@ -10,6 +10,7 @@ class ListCard extends Component {
       text: 'Delete'
     }
 
+
     handleDelete = () => {
         this.props.deleteList(this.props.id)
         this.setState({
