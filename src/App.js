@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
-import { getProducts } from './actions/lists'
+import { getLists } from './actions/lists'
 import ProductForm from './containers/ProductForm'
 import Products from './containers/Products'
 import { getServices } from './actions/services'
@@ -16,7 +16,7 @@ import Home from './components/Home'
 class App extends Component {
 
   componentDidMount(){
-    this.props.getProducts()
+    this.props.getLists()
     this.props.getServices()
   } 
 
@@ -39,4 +39,4 @@ class App extends Component {
 
 }
 
-export default connect(null, { getProducts, getServices } )(App);
+export default connect(null, { getLists, getServices } )(App);

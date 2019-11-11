@@ -1,12 +1,12 @@
 const API_URL = 'https://sitejet-api.herokuapp.com/'
 
-export const getProducts = () => {
+export const getLists = () => {
     return (dispatch) => {
-        dispatch({type: 'LOADING_PRODUCTS'})
-        return fetch(API_URL + '/products')
+        dispatch({type: 'LOADING_LISTS'})
+        return fetch(API_URL + '/lists')
         .then(resp => resp.json())
-        .then(products => {
-            dispatch({type: "FETCH_PRODUCTS", payload: products})
+        .then(lists => {
+            dispatch({type: "FETCH_LISTS", payload: lists})
         })
     }
 }  
@@ -27,7 +27,7 @@ export const addList = (list) => {
     }
 }
 
-export const deleteProduct = (product_id) =>{
+export const deleteList = (list_id) =>{
 console.log('deleting goal')
 let data = {
     method: 'DELETE',
@@ -37,6 +37,6 @@ let data = {
     }
 }
 return () => {
-    fetch(API_URL + `/products/${product_id}`, data)
+    fetch(API_URL + `/lists/${list_id}`, data)
     }
 }
