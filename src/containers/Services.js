@@ -7,7 +7,7 @@ import { CardColumns } from 'react-bootstrap';
 class Services extends Component {
 
     render() {
-
+      debugger; 
       const services = this.props.services.map((service, i) => <ServiceCard key={i} {...service} />)
 
       return (

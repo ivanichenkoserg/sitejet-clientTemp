@@ -14,11 +14,6 @@ class NavBar extends Component {
             <Nav className="top-nav-bar">
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/products">Lists</Nav.Link>
-                <Nav.Link href="/services">Test</Nav.Link>
-                <NavDropdown title="Create New" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="/product/new">Product</NavDropdown.Item>
-                    <NavDropdown.Item href="/service/new">Service</NavDropdown.Item>
-                </NavDropdown>
             </Nav>
         </Navbar.Collapse>
         </Navbar>

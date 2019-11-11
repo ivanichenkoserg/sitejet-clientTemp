@@ -5,9 +5,7 @@ export const getLists = () => {
         dispatch({type: 'LOADING_LISTS'})
         return fetch(API_URL + '/lists')
         .then(resp => resp.json())
-        .then(lists => {
-            dispatch({type: "FETCH_LISTS", payload: lists})
-        })
+        .then(lists => { dispatch({type: "FETCH_LISTS", payload: lists})})
     }
 }  
   

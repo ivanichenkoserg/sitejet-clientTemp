@@ -1,5 +1,9 @@
+import Lists from '../containers/Lists';
+import Services from '../containers/Services';
 import React, { Component } from 'react';
-import { Form, Button, Col, FormControl, Container, Row } from 'react-bootstrap';
+import { Form, Button, Col, FormControl, Container } from 'react-bootstrap';
+import { connect } from 'react-redux'
+import { getLists, addList } from '../actions/lists'
 
 class Home extends Component {
 
@@ -16,10 +20,8 @@ class Home extends Component {
 
     handleOnSubmit = e => {
         e.preventDefault()
-        const product = {...this.state}
-        debugger; 
-        console.log(product)
-        // this.props.addProduct(product)
+        const list = {...this.state}
+        this.props.addList(list)
         this.setState({
             native_language: '',
             foreign_language: ''
@@ -27,6 +29,9 @@ class Home extends Component {
     }
 
     render() {
+
+      // const lists = this.props.lists.map((list, i) => <ListCard key={i} {...list} />)
+
       return (
         <main role="main" class="container" align="center">
           <br />
@@ -65,13 +70,7 @@ class Home extends Component {
             <br />
             <div align="center">
               <Container>
-                <Row>
-                  <Col>1 of 2</Col>
-                  <Col>2 of 2</Col>
-                  <Col>
-                      Delete
-                  </Col>
-                </Row>
+                {this.props.loading ? <h3>Loading...</h3> : < Lists />}  
               </Container>
             </div>
           </div>
@@ -80,6 +79,13 @@ class Home extends Component {
     }
   
   }
-  
-  export default Home;
 
+  const mapStateToProps = (state) => {
+    console.log("I am state.", state)
+    return {
+      lists: state.listReducer.services,
+      loading: state.listReducer.loading
+    }
+  }
+  
+  export default connect(mapStateToProps, { getLists, addList } )(Home);

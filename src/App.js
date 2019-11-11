@@ -3,7 +3,7 @@ import './App.css';
 import { connect } from 'react-redux'
 import { getLists } from './actions/lists'
 import ProductForm from './containers/ProductForm'
-import Products from './containers/Products'
+import Lists from './containers/Lists'
 import { getServices } from './actions/services'
 import ServiceForm from './containers/ServiceForm'
 import Services from './containers/Services'
@@ -28,8 +28,7 @@ class App extends Component {
         <React.Fragment>
           <NavBar />
           <Route exact path="/" component={Home} />
-          <Route exact path="/products" component={Products} />
-          <Route exact path="/services" component={Services} />
+          <Route exact path="/lists" component={Lists} />
         </React.Fragment>
       </Router>
       <Footer />

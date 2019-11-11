@@ -1,28 +1,28 @@
-export default ( state = {products: [], loading: false}, action ) => {
+export default ( state = {lists: [], loading: false}, action ) => {
     switch (action.type) {
-        case 'LOADING_PRODUCTS':
+        case 'LOADING_LISTS':
             return {
                 ...state, 
                 loading: true
             }
         
-        case "FETCH_PRODUCTS": 
+        case "FETCH_LISTS":
             return {
-                products: action.payload,
+                lists: action.payload,
                 loading:false 
             }
         
-        case 'ADD_PRODUCT': 
-            console.log("Got to add a product")
+        case 'ADD_LIST': 
+            console.log("Got to add a list")
             return {
                 ...state, 
                 loading: true 
             }
         
-        case 'PRODUCT_ADDED':
-            console.log('Added product')
+        case 'LIST_ADDED':
+            console.log('Added list')
             return {
-                products:[...state.products, action.payload],
+                lists:[...state.lists, action.payload],
                 loading:false
             }
 

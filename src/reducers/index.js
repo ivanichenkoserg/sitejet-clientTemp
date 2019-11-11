@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'; 
-import productReducer from './productReducer';
+import listReducer from './listReducer';
 import serviceReducer from './serviceReducer'
 
 const rootReducer = combineReducers({
-    productReducer,
+    listReducer,
     serviceReducer
 })
 

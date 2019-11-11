@@ -2,7 +2,7 @@ import ListCard from '../components/ListCard';
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { getLists } from '../actions/lists'
-import { Container } from 'react-bootstrap';
+import { Container, CardColumns, Table } from 'react-bootstrap';
 
 class Lists extends Component {
 
@@ -13,14 +13,10 @@ class Lists extends Component {
       return (
         <div>
           <br />  
-          <div className="row justify-content-center">
-            <h2>Lists</h2>
-          </div>
-          <br />
           <Container>
             <div className="container">
               <div className="row" >
-                <div className="col-md-12" align="left"> 
+                <div className="col-md-12" align="center"> 
                   {this.props.loading ? <h3>Loading...</h3> : lists} 
                 </div>
               </div>
@@ -35,7 +31,7 @@ class Lists extends Component {
   const mapStateToProps = (state) => {
     console.log("I am state.", state)
     return {
-      lists: state.listReducer.products,
+      lists: state.listReducer.lists,
       loading: state.listReducer.loading
     }
   } 
