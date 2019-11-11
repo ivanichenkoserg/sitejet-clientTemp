@@ -13,7 +13,7 @@ class NavBar extends Component {
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="top-nav-bar">
                 <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/products">Lists</Nav.Link>
+                <Nav.Link href="/products">Test</Nav.Link>
             </Nav>
         </Navbar.Collapse>
         </Navbar>

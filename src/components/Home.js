@@ -30,8 +30,6 @@ class Home extends Component {
 
     render() {
 
-      // const lists = this.props.lists.map((list, i) => <ListCard key={i} {...list} />)
-
       return (
         <main role="main" class="container" align="center">
           <br />
@@ -66,7 +64,8 @@ class Home extends Component {
           </div>  
           <br />
           <div align="left">
-            <h2>List</h2>
+          <br />
+            <h2>List <Button variant="success" size='lg' >Test Mode</Button> </h2> 
             <br />
             <div align="center">
               <Container>
