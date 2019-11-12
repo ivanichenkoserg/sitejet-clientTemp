@@ -10,12 +10,11 @@ class Tests extends Component {
     state = {
       lang_element: 0,
       progress_bar: 1,
-      shuffled: false
+      shuffled: false,
     }
     
     handleOnSubmit = e => {
       e.preventDefault()
-      debugger; 
         this.setState({
           lang_element: this.state.lang_element + 1,
           progress_bar: this.state.progress_bar + 1,
@@ -54,8 +53,11 @@ class Tests extends Component {
             <div align="left">
                 Welcome to the Language Tester Test Mode. You will be tested on a random selection of 20 words that were entered in the 'List' tab. 
                 Once you have completed the test you will be able to see your results in the results tab.
+                <br />
+                <br />
+                Please note that if you refresh the page or move to another tab, you will lose your test progress.
             </div>
-            <br />
+            <br />  
             <div align="left" >
             <h6>Test Progress</h6>  
             </div>
