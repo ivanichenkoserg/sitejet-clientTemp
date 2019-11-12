@@ -1,8 +1,8 @@
 import Lists from '../containers/Lists';
-import Test from '../containers/Tests';
+import Tests from '../containers/Tests';
 import Services from '../containers/Services';
 import React, { Component } from 'react';
-import { Form, Button, Col, FormControl, Container } from 'react-bootstrap';
+import { Nav, Form, Button, Col, FormControl, Container } from 'react-bootstrap';
 import { connect } from 'react-redux'
 import { getLists, addList } from '../actions/lists'
 
@@ -66,7 +66,7 @@ class Home extends Component {
           <br />
           <div align="left">
           <br />
-            <h2>List <Button variant="success" size='lg' onclick={<Test />} >Test Mode</Button> </h2> 
+            <h2>List <Button variant="success" size='lg' href='/test' >Test Mode</Button> </h2> 
             <br />
             <div align="center">
               <Container>

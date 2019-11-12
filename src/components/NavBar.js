@@ -13,8 +13,9 @@ class NavBar extends Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="top-nav-bar">
-                <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/tests">Test</Nav.Link>
+                <Nav.Link href="/">List</Nav.Link>
+                <Nav.Link href="/test">Test</Nav.Link>
+                <Nav.Link href="/result">Result</Nav.Link>
             </Nav>
         </Navbar.Collapse>
         </Navbar>
