@@ -15,7 +15,6 @@ class NavBar extends Component {
             <Nav className="top-nav-bar">
                 <Nav.Link href="/">List</Nav.Link>
                 <Nav.Link href="/test">Test</Nav.Link>
-                <Nav.Link href="/result">Result</Nav.Link>
             </Nav>
         </Navbar.Collapse>
         </Navbar>
