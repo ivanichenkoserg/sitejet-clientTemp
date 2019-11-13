@@ -6,7 +6,6 @@ class NavBar extends Component {
     render() {
       return (
         <div >
-
         <Navbar bg="dark" variant="dark" expand="lg">
         <Navbar.Brand >Language Tester</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -17,7 +16,6 @@ class NavBar extends Component {
             </Nav>
         </Navbar.Collapse>
         </Navbar>
-
         </div>
       );
     }
