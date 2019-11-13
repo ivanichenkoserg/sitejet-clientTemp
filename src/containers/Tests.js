@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { getLists } from '../actions/lists'
 import { ProgressBar, Form, Col, Button, FormControl } from 'react-bootstrap';
-import Results from './Results';
+import Results from './ResultCard';
 
 class Tests extends Component {
 
@@ -51,7 +51,6 @@ class Tests extends Component {
         let i = array.length - 1;
         for (; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
-          console.log(j)
           const temp = array[i];
           array[i] = array[j];
           array[j] = temp;
@@ -96,7 +95,6 @@ class Tests extends Component {
             <div align="left" >
             <h6>Test Progress</h6>  
             </div>
-            {}
             <ProgressBar now={progress} label={(progress !== 0) ? (Math.round(progress)+'%') : ''} />
             <br />
             <br />

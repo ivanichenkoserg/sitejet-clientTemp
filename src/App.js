@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
 import { getLists } from './actions/lists'
-import Results from './containers/Results'
 import Tests from './containers/Tests'
 import NavBar from './components/NavBar'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -25,7 +24,6 @@ class App extends Component {
           <NavBar />
           <Route exact path="/" component={Home} />
           <Route exact path="/test" component={Tests} />
-          <Route exact path="/result" component={Results} />
         </React.Fragment>
       </Router>
       <Footer />
