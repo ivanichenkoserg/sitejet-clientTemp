@@ -1,8 +1,6 @@
 import Lists from '../containers/Lists';
-import Tests from '../containers/Tests';
-import Services from '../containers/Services';
 import React, { Component } from 'react';
-import { Nav, Form, Button, Col, FormControl, Container } from 'react-bootstrap';
+import { Form, Button, Col, FormControl, Container } from 'react-bootstrap';
 import { connect } from 'react-redux'
 import { getLists, addList } from '../actions/lists'
 
@@ -81,7 +79,6 @@ class Home extends Component {
   }
 
   const mapStateToProps = (state) => {
-    console.log("I am state.", state)
     return {
       lists: state.listReducer.services,
       loading: state.listReducer.loading

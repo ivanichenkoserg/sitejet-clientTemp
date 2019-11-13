@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { getLists } from '../actions/lists'
-import { Table, Button, Form, Col, FormControl } from 'react-bootstrap';
-import Lists from './Lists'
+import { Table, Button, Badge} from 'react-bootstrap';
 
 class Results extends Component {
 
@@ -28,10 +27,10 @@ class Results extends Component {
             children.push(<td>{'Result'}</td>)  
           }
           else if (this.props.foreign_language[i].toLowerCase() === this.props.foreign_language_attempt[i].toLowerCase()) {
-            children.push(<td>{'Correct'}</td>)  
+            children.push(<td>{<Badge variant="success">Correct</Badge>}</td>)  
           }
           else {
-            children.push(<td>{'Incorrect'}</td>)
+            children.push(<td>{<Badge variant="danger">Incorrect</Badge>}</td>)
           }
       
       //Create the parent and add the children
@@ -50,7 +49,9 @@ class Results extends Component {
           <main role="main" className="container" align="center"> 
 
           <div align='left'>
-            <Button href='/' align='left'>Back to List</Button>
+            <Button href='/' align='left'>Back to List</Button> <br />
+            <br />
+            <b>Hit Ratio (% Success):</b>  {Math.round(this.props.hit_ratio * 100) + '%'} 
           </div>
 
           <br />
@@ -58,10 +59,6 @@ class Results extends Component {
           <Table striped bordered hover >
             {this.createTable()}
           </Table>
-
-          <b>Hit Ratio (% Success):</b> {Math.round(this.props.hit_ratio * 100) + '%'}
-
-          <br />
           <br />
           </main>
         </div>
@@ -71,7 +68,6 @@ class Results extends Component {
   }
 
   const mapStateToProps = (state) => {
-    console.log("I am state.", state)
     return {
       lists: state.listReducer.lists,
       loading: state.listReducer.loading

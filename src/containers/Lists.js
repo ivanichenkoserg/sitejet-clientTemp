@@ -2,7 +2,7 @@ import ListCard from '../components/ListCard';
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { getLists } from '../actions/lists'
-import { Container, CardColumns, Table } from 'react-bootstrap';
+import { Container, Button } from 'react-bootstrap';
 
 class Lists extends Component {
 
@@ -11,12 +11,13 @@ class Lists extends Component {
       const lists = this.props.lists.map((list, i) => <ListCard key={i} {...list} />)
 
       return (
-        <div>
-          <br />  
+        <div align='left'>
+        <Button variant="outline-primary">Number of Words: {this.props.lists.length}</Button>
           <Container>
             <div className="container">
               <div className="row" >
                 <div className="col-md-12" align="center"> 
+                  <br />
                   {this.props.loading ? <h3>Loading...</h3> : lists} 
                 </div>
               </div>
@@ -29,7 +30,6 @@ class Lists extends Component {
   }
 
   const mapStateToProps = (state) => {
-    console.log("I am state.", state)
     return {
       lists: state.listReducer.lists,
       loading: state.listReducer.loading

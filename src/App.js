@@ -2,12 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
 import { getLists } from './actions/lists'
-import ProductForm from './containers/ProductForm'
 import Results from './containers/Results'
 import Tests from './containers/Tests'
-import { getServices } from './actions/services'
-import ServiceForm from './containers/ServiceForm'
-import Services from './containers/Services'
 import NavBar from './components/NavBar'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Footer from './components/Footer'
@@ -18,7 +14,6 @@ class App extends Component {
 
   componentDidMount(){
     this.props.getLists()
-    this.props.getServices()
   } 
 
   render(){ 
@@ -40,4 +35,4 @@ class App extends Component {
 
 }
 
-export default connect(null, { getLists, getServices } )(App);
+export default connect(null, { getLists } )(App);

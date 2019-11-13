@@ -26,7 +26,7 @@ export const addList = (list) => {
 }
 
 export const deleteList = (list_id) =>{
-console.log('deleting goal')
+
 let data = {
     method: 'DELETE',
     headers: {

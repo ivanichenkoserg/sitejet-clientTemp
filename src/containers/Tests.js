@@ -3,13 +3,12 @@ import { connect } from 'react-redux'
 import { getLists } from '../actions/lists'
 import { ProgressBar, Form, Col, Button, FormControl } from 'react-bootstrap';
 import Results from './Results';
-import  { Redirect } from 'react-router-dom'
 
 class Tests extends Component {
 
     state = {
       lang_element: 0,
-      progress_bar: 1,
+      progress_bar: 0,
       shuffled: false,
       native_language: [],
       foreign_language: [],
@@ -67,7 +66,7 @@ class Tests extends Component {
       const rand_foreign_lang_list = shuffledArray.slice(0,20).map((list) => list.foreign_language )
       const progress = (this.state.progress_bar / rand_native_lang_list.length) * 100
 
-      if ((rand_native_lang_list.length < this.state.progress_bar) && (rand_native_lang_list.length !== 0)) {
+      if ((rand_native_lang_list.length === this.state.lang_element) && (rand_native_lang_list.length !== 0)) {
 
       const hit_ratio = this.checkAccuracy()
 
@@ -84,11 +83,11 @@ class Tests extends Component {
           <main role="main" className="container" align="center">
             
             <br />
-            <h2>Test mode</h2>
+            <h2>Test Mode</h2>
             <br />
             <div align="left">
                 Welcome to the Language Tester Test Mode. You will be tested on a random selection of 20 words that were entered in the 'List' tab. 
-                Once you have completed the test you will be able to see your results in the results tab.
+                Once you have completed the test you will be able to see your results.
                 <br />
                 <br />
                 Please note that if you refresh the page or move to another tab, you will lose your test progress.
@@ -97,7 +96,8 @@ class Tests extends Component {
             <div align="left" >
             <h6>Test Progress</h6>  
             </div>
-            <ProgressBar now={progress} label={Math.round(progress)+'%'} />
+            {}
+            <ProgressBar now={progress} label={(progress !== 0) ? (Math.round(progress)+'%') : ''} />
             <br />
             <br />
             
@@ -122,7 +122,7 @@ class Tests extends Component {
                 </Form.Row>
 
                 <Button variant="success" type="submit" align="left">
-                    Add Words
+                    Confirm Answer
                 </Button>
                 
               </div>
@@ -139,7 +139,6 @@ class Tests extends Component {
   }
 
   const mapStateToProps = (state) => {
-    console.log("I am state.", state)
     return {
       lists: state.listReducer.lists,
       loading: state.listReducer.loading

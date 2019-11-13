@@ -13,14 +13,12 @@ export default ( state = {lists: [], loading: false}, action ) => {
             }
         
         case 'ADD_LIST': 
-            console.log("Got to add a list")
             return {
                 ...state, 
                 loading: true 
             }
         
         case 'LIST_ADDED':
-            console.log('Added list')
             return {
                 lists:[...state.lists, action.payload],
                 loading:false
