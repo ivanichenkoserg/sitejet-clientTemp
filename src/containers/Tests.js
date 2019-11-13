@@ -15,24 +15,6 @@ class Tests extends Component {
       foreign_language: [],
       foreign_language_attempt: []
     }
-    
-    submitTestData = e => {
-      e.preventDefault()
-
-      // Note: need to add code here that will fetch records from the database to 
-      // find out how much information is there then delete all data  
-
-      // for (let i=0; i < this.state.native_language.length  ; i++) {
-      //   const test = {
-      //     native_language: this.state.native_language[i], 
-      //     foreign_language: this.state.foreign_language[i],
-      //     foreign_language_attempt: this.state.foreign_language_attempt[i]
-      //   }
-      //   // this.props.addTest(test)
-      // }
-
-
-    }
 
     handleOnSubmit = e => {
       e.preventDefault()
@@ -54,7 +36,7 @@ class Tests extends Component {
 
       for (let j=0 ; j < this.state.native_language.length ; j++)
         {
-          if (this.state.foreign_language[j] === this.state.foreign_language_attempt[j]){
+          if (this.state.foreign_language[j].toLowerCase() === this.state.foreign_language_attempt[j].toLowerCase()){
             check.push(1)
           }      
           else {check.push(0)}

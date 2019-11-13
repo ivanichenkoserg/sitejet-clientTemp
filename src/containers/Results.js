@@ -27,7 +27,7 @@ class Results extends Component {
           if (i === 0) {
             children.push(<td>{'Result'}</td>)  
           }
-          else if (this.props.foreign_language_attempt[i]===this.props.foreign_language[i]) {
+          else if (this.props.foreign_language[i].toLowerCase() === this.props.foreign_language_attempt[i].toLowerCase()) {
             children.push(<td>{'Correct'}</td>)  
           }
           else {
