@@ -11,19 +11,26 @@ class ListCard extends Component {
     }
 
     handleDelete = () => {
-        this.props.deleteList(this.props.id)
+    
+      // will delete the specific entry from the list database  
+      this.props.deleteList(this.props.id)
+
+      // will change the colour of the delete button to green and the text on the delete button to deleted
         this.setState({
           bgColor: 'success',
           text: 'Deleted' 
         }) 
+    
       }
 
     render() {
 
+      // makes it possible to refer to props without typing this.props every time
       const {id, native_language, foreign_language} = this.props
 
       return (
         <div key={id} >
+          {/* displays the native and foreign languages from the list database and a delete button */}
             <ButtonGroup>
                 <Button variant="primary" size='lg' >{native_language}</Button>
                 <Button variant="primary" size='lg' >{foreign_language}</Button>

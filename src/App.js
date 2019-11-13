@@ -18,7 +18,9 @@ class App extends Component {
   render(){ 
 
     return (
-      <div className="App" >       
+      <div className="App" >     
+
+      {/* creates routing to the home page and the test page   */}
       <Router>
         <React.Fragment>
           <NavBar />

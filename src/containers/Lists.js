@@ -8,6 +8,7 @@ class Lists extends Component {
 
     render() {
 
+      // this will send data that has been fetched from the list database to ListCard for display 
       const lists = this.props.lists.map((list, i) => <ListCard key={i} {...list} />)
 
       return (

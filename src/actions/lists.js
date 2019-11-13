@@ -1,5 +1,6 @@
 const API_URL = 'https://sitejet-api.herokuapp.com/'
 
+// This will extract the list of native languages and foreign languages from the list database
 export const getLists = () => {
     return (dispatch) => {
         dispatch({type: 'LOADING_LISTS'})
@@ -9,6 +10,7 @@ export const getLists = () => {
     }
 }  
   
+// This will add new words to the list database
 export const addList = (list) => {
     return (dispatch) => {
         dispatch({type: "ADD_LIST"}, list)
@@ -25,6 +27,7 @@ export const addList = (list) => {
     }
 }
 
+//This will delete values from the list database
 export const deleteList = (list_id) =>{
 
 let data = {

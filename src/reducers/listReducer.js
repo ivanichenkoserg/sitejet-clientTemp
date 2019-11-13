@@ -1,5 +1,7 @@
 export default ( state = {lists: [], loading: false}, action ) => {
     switch (action.type) {
+        
+        // triggers the loading flag
         case 'LOADING_LISTS':
             return {
                 ...state, 
@@ -21,7 +23,7 @@ export default ( state = {lists: [], loading: false}, action ) => {
         case 'LIST_ADDED':
             return {
                 lists:[...state.lists, action.payload],
-                loading:false
+                loading: false
             }
 
         default: 
