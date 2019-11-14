@@ -1,10 +1,6 @@
-# FireSale - Client
+# Language Tester - Client
 
-This is a website that allows sole business owners to log their inventory of products and services which they wish to sell. 
-
-## Screenshots
-
-![Screenshot 1](https://drive.google.com/file/d/1TTyabuOlM9LHg-FPNPUaMamGj5SNn_0Y/view?usp=sharing)
+This is a website that allows language learners to test their knowledge of a language of their choice. 
 
 ## Technology used
 
@@ -15,22 +11,23 @@ Built with:
 
 ## Features
 
-* Allows for product / service name, description, price and image in listings
-* Users can mark products as sold and delete them       
+* Users can type in a word in their native language and foreign language for storage in the database
+* Users can delete unwanted language pairs
+* Users can test their knowledge with an interactive test       
 
 ## Installation
 
 To install this repository simply clone both the client repo (this one) and the rails backend repo by running: 
 
 ```
-git clone https://github.com/Kish-Siva-1/firesale-client.git
-git clone https://github.com/Kish-Siva-1/firesale-api.git
+git clone git@github.com:Kish-Siva-1/sitejet-client.git
+git clone git@github.com:Kish-Siva-1/sitejet-api.git
 ```
 
 Open the file by running each of the commands below in a new terminal: 
 
-1. `cd firesale-client/`
-2. `cd firesale-api/`
+1. `cd sitejet-client/`
+2. `cd sitejet-api/`
 
 Then install the relevant dependencies with:  
 

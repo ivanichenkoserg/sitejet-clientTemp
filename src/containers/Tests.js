@@ -95,7 +95,7 @@ class Tests extends Component {
         )
       }
 
-      // 
+      // this is the main return that provides the progress bar and a form with the tests for user input
         return (
           <div>         
           <main role="main" className="container" align="center">
