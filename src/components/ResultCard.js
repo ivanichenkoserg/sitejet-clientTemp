@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import { getLists } from '../actions/lists'
 import { Table, Button, Badge} from 'react-bootstrap';
 
 class Results extends Component {
@@ -8,6 +6,7 @@ class Results extends Component {
 
   createTable = () => {
     
+    // Adds table headings to the table 
     this.props.foreign_language.unshift('Translation')
     this.props.foreign_language_attempt.unshift('Your Attempt')
     this.props.native_language.unshift('Native Language')
@@ -23,6 +22,7 @@ class Results extends Component {
           children.push(<td>{this.props.foreign_language[i]}</td>)
           children.push(<td>{this.props.foreign_language_attempt[i]}</td>)
           
+          // Will add the tables headings for the first row and add the data values to the table for subsequent rows
           if (i === 0) {
             children.push(<td>{'Result'}</td>)  
           }
@@ -33,7 +33,7 @@ class Results extends Component {
             children.push(<td>{<Badge variant="danger">Incorrect</Badge>}</td>)
           }
       
-      //Create the parent and add the children
+      //Create the parent and add the children (add the rows to the table)
       table.push(<tr>{children}</tr>)
 
     }
@@ -59,19 +59,13 @@ class Results extends Component {
           <Table striped bordered hover >
             {this.createTable()}
           </Table>
+
           <br />
           </main>
         </div>
       );
     }
 
-  }
-
-  const mapStateToProps = (state) => {
-    return {
-      lists: state.listReducer.lists,
-      loading: state.listReducer.loading
-    }
   } 
   
-  export default connect(mapStateToProps, { getLists } )(Results);
+  export default Results;

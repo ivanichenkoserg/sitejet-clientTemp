@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { getLists } from '../actions/lists'
 import { ProgressBar, Form, Col, Button, FormControl } from 'react-bootstrap';
 import Results from '../components/ResultCard';
 
@@ -75,14 +74,14 @@ class Tests extends Component {
       // shuffles the array
       const shuffledArray = this.shuffleArray(this.props.lists)
       
-      // extracts the native language words and foreign language words
+      // extracts the native language words and foreign language words into seperate lists
       const rand_native_lang_list = shuffledArray.slice(0,20).map((list) => list.native_language )
       const rand_foreign_lang_list = shuffledArray.slice(0,20).map((list) => list.foreign_language )
       
       // calculates the progress (%) of the status bar
       const progress = (this.state.progress_bar / rand_native_lang_list.length) * 100
 
-      // triggers if the progress bar has reached the end of the test
+      // triggers if the progress bar has reached the end of the test, otherwise it continues to the return below
       if ((rand_native_lang_list.length === this.state.lang_element) && (rand_native_lang_list.length !== 0)) {
   
       const hit_ratio = this.checkAccuracy()
@@ -96,6 +95,7 @@ class Tests extends Component {
         )
       }
 
+      // 
         return (
           <div>         
           <main role="main" className="container" align="center">
@@ -114,7 +114,7 @@ class Tests extends Component {
             <div align="left" >
             <h6>Test Progress</h6>  
             </div>
-            <ProgressBar now={progress} label={(progress !== 0) ? (Math.round(progress)+'%') : ''} />
+            <ProgressBar now={progress} label={ this.props.loading ? '' : ((progress !== 0) ? (Math.round(progress)+'%') : '') } />
             <br />
             <br />
             
@@ -128,7 +128,7 @@ class Tests extends Component {
                     {/* send the actual native word to handlesubmit on submission */}
                     <Form.Group as={Col} controlId="formGridName">
                         <Form.Label>Native Language</Form.Label><br/>
-                        <Button variant="primary" block name='native_language' align="left">{rand_native_lang_list[this.state.lang_element]}</Button>
+                        <Button variant="primary" block name='native_language' align="left">{this.props.loading ? <h7>Loading...</h7> : rand_native_lang_list[this.state.lang_element]}</Button>
                         <FormControl type='hidden' value={rand_native_lang_list[this.state.lang_element]} /> 
                     </Form.Group>
 
@@ -165,4 +165,4 @@ class Tests extends Component {
     }
   } 
   
-  export default connect(mapStateToProps, { getLists } )(Tests);
+  export default connect(mapStateToProps)(Tests);
