@@ -34,7 +34,7 @@ class ListCard extends Component {
             <ButtonGroup>
                 <Button variant="primary" size='lg' >{native_language}</Button>
                 <Button variant="primary" size='lg' >{foreign_language}</Button>
-                <Button variant="danger" onClick={this.handleDelete} variant={this.state.bgColor} size='lg'>{this.state.text}</Button>
+                <Button variant={this.state.bgColor} onClick={this.handleDelete} size='lg'>{this.state.text}</Button>
             </ButtonGroup>
             <br />
             <br />
