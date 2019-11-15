@@ -85,9 +85,12 @@ class Tests extends Component {
       // calculates the progress (%) of the status bar
       const progress = (this.state.progress_bar / rand_native_lang_list.length) * 100
 
+      //Sets up a loading screen if the page hasn't loaded
       if (this.props.loading) {
         return (<div><br /><h4> Loading...</h4></div>)
       }
+
+      //sets up a warning if the user hasn't added any words to the list
       else if (rand_native_lang_list.length === 0) {
         return (
           
