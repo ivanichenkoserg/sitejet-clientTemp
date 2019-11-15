@@ -54,6 +54,10 @@ class Tests extends Component {
       return hit_ratio 
     }
 
+    emptyWordCheck = () => {
+      
+    }
+
     shuffleArray = (array) => {
 
     // algorithm below will shuffle the list of words randomly. If the list has previously been shuffled 
@@ -80,6 +84,24 @@ class Tests extends Component {
       
       // calculates the progress (%) of the status bar
       const progress = (this.state.progress_bar / rand_native_lang_list.length) * 100
+
+      if (this.props.loading) {
+        return (<div><br /><h4> Loading...</h4></div>)
+      }
+      else if (rand_native_lang_list.length === 0) {
+        return (
+          
+        <div>
+          
+          <br />Please add a word to the list to begin the test.<br />
+          <br />
+          <Button href='/' align='left'>Back to List</Button>
+          <br />
+
+        </div>
+        
+        )
+      }
 
       // triggers if the progress bar has reached the end of the test, otherwise it continues to the return below
       if ((rand_native_lang_list.length === this.state.lang_element) && (rand_native_lang_list.length !== 0)) {
@@ -114,10 +136,10 @@ class Tests extends Component {
             <div align="left" >
             <h6>Test Progress</h6>  
             </div>
-            <ProgressBar now={progress} label={ this.props.loading ? '' : ((progress !== 0) ? (Math.round(progress)+'%') : '') } />
+            <ProgressBar now={progress} label={ ((progress !== 0) ? (Math.round(progress)+'%') : '') } />
             <br />
             <br />
-            
+
             <Form onSubmit={this.handleOnSubmit} >
           
               <div align="left">
@@ -128,7 +150,7 @@ class Tests extends Component {
                     {/* send the actual native word to handlesubmit on submission */}
                     <Form.Group as={Col} controlId="formGridName">
                         <Form.Label>Native Language</Form.Label><br/>
-                        <Button variant="primary" block name='native_language' align="left">{this.props.loading ? <h7>Loading...</h7> : rand_native_lang_list[this.state.lang_element]}</Button>
+                        <Button variant="primary" block name='native_language' align="left">{rand_native_lang_list[this.state.lang_element]}</Button>
                         <FormControl type='hidden' value={rand_native_lang_list[this.state.lang_element]} /> 
                     </Form.Group>
 
