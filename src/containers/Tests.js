@@ -33,6 +33,7 @@ class Tests extends Component {
           shuffled: true
         }) 
 
+        // will clear the form field
         e.target[2].value = ''
     }
 
