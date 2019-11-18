@@ -18,20 +18,27 @@ class Results extends Component {
       let children = []
 
       //Inner loop to create children
+
+      if (i === 0 ) {
+          children.push(<th>{this.props.native_language[i]}</th>)
+          children.push(<th>{this.props.foreign_language[i]}</th>)
+          children.push(<th>{this.props.foreign_language_attempt[i]}</th>)
+          children.push(<th>{'Result'}</th>)
+      }
+      else {
+
           children.push(<td>{this.props.native_language[i]}</td>)
           children.push(<td>{this.props.foreign_language[i]}</td>)
           children.push(<td>{this.props.foreign_language_attempt[i]}</td>)
           
           // Will add the tables headings for the first row and add the data values to the table for subsequent rows
-          if (i === 0) {
-            children.push(<td>{'Result'}</td>)  
-          }
-          else if (this.props.foreign_language[i].toLowerCase() === this.props.foreign_language_attempt[i].toLowerCase()) {
+          if (this.props.foreign_language[i].toLowerCase() === this.props.foreign_language_attempt[i].toLowerCase()) {
             children.push(<td>{<Badge variant="success">Correct</Badge>}</td>)  
           }
           else {
             children.push(<td>{<Badge variant="danger">Incorrect</Badge>}</td>)
           }
+      }
       
       //Create the parent and add the children (add the rows to the table)
       table.push(<tr>{children}</tr>)
