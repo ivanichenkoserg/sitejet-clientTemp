@@ -24,7 +24,7 @@ class Tests extends Component {
           foreign_language: [...this.state.foreign_language,e.target[3].value],
           native_language: [...this.state.native_language,e.target[1].value],
           foreign_language_attempt: [...this.state.foreign_language_attempt,e.target[2].value],
-
+           
           // will then increment the progress bar and lang_element which selects the next element on the list of native language to display
           lang_element: this.state.lang_element + 1,
           progress_bar: this.state.progress_bar + 1,
@@ -52,10 +52,6 @@ class Tests extends Component {
       hit_ratio = (check.reduce((a, b) => a + b, 0) / check.length)  
 
       return hit_ratio 
-    }
-
-    emptyWordCheck = () => {
-      
     }
 
     shuffleArray = (array) => {
