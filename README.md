@@ -20,8 +20,8 @@ Built with:
 To install this repository simply clone both the client repo (this one) and the rails backend repo by running: 
 
 ```
-git clone git@github.com:Kish-Siva-1/sitejet-client.git
-git clone git@github.com:Kish-Siva-1/sitejet-api.git
+git clone git@github.com:Sergey/sitejet-client.git
+git clone git@github.com:Sergey/sitejet-api.git
 ```
 
 Open the file by running each of the commands below in a new terminal: 
@@ -41,4 +41,4 @@ Finally run both by using:
 
 ## License
 
-MIT © Kish-Siva-1 
+MIT © Sergey 
